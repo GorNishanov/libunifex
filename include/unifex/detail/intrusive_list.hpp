@@ -67,6 +67,11 @@ public:
         head_ = item;
     }
 
+    T& front() noexcept {
+        UNIFEX_ASSERT(!empty());
+        return *head_;
+    }
+
     [[nodiscard]] T* pop_front() noexcept {
         UNIFEX_ASSERT(!empty());
         T* item = head_;
